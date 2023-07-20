@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use(tracker)
+// app.use(tracker)
 
 app.use("/user", userRouter);
 
