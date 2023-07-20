@@ -1,10 +1,12 @@
 const express = require("express");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/user.router");
-const { auth } = require("./middlewares/auth.middleware");
 const { productRouter } = require("./routes/product.router");
 const cors = require("cors");
+const passport = require("./Oauth");
 require("dotenv").config();
+
+PORT = process.env.PORT || 4500;
 
 const app = express();
 
@@ -15,13 +17,17 @@ app.use("/user", userRouter);
 
 app.use("/product", productRouter)
 
-app.get("/", (req,res) => {
-    res.send("Home Page")
-})
+app.get("/", (req, res) => {
+    res.send("Home Page");
+});
 
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile'] }));
 
-
-PORT=process.env.PORT || 4500;
+app.get('/auth/google/callback',
+    passport.authenticate('google', { failureRedirect: '/login', session: false}),
+    function (req, res) {
+        res.redirect('/');
+    });
 
 app.listen(process.env.PORT, async () => {
     try {
