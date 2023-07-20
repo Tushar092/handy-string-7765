@@ -1,25 +1,27 @@
-const jwt=require("jsonwebtoken")
 
-const authenticate=(req,res,next)=>{
-    const token=req.headers.authorization
-    if(token){
-        jwt.verify(token,"masai",(err,decoded)=>{
+const jwt = require("jsonwebtoken");
+const auth = (req,res,next)=>{
+    let token = req.headers.authorization?.split(" ")[1];
+    try{
+        if(token){
+            let decoded = jwt.verify(token,"masai");
             if(decoded){
-                // console.log(decoded.userID)
-                req.body.userID=decoded.userID
+                console.log(decoded, decoded.role)
+                req.userID = decoded.userID;
+                req.role = decoded.role
+                //console.log(req)
                 next()
-            } else {
-                res.status(200).send({"msg":"Please login"})
+            }else{
+                res.json({msg: "Not Authorized!!"})
             }
-        })
-    } else {
-        res.status(200).send({"msg":"Please login"})
+        }else{
+            res.json({msg: "Please Login First"})
+        }
+    }catch(err){
+        res.status(400).json({err: err.message});
+        console.log(err.message)
+
     }
 }
-
-
-module.exports={
-    authenticate
-}
-
+module.exports = {auth};
 
