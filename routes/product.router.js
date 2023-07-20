@@ -5,7 +5,6 @@ const { ProductModel } = require("../models/product.model")
 productRouter.get("/", async (req, res) => {
     try {
         const products = await ProductModel.find();
-        console.log(products); // add this line to log the products in the console
         res.status(200).send(products);
     } catch (error) {
         res.status(400).send({msg:error.message});
@@ -35,7 +34,6 @@ productRouter.patch("/update/:productId", async (req, res) => {
 })
 
 productRouter.delete("/delete/:productId", async (req, res) => {
-    // const payload=req.body
     const productId=req.params.Id
     try{
         await ProductModel.findByIdAndDelete({_id:productId})
