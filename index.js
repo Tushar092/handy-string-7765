@@ -4,12 +4,14 @@ const { userRouter } = require("./routes/user.router");
 const { auth } = require("./middlewares/auth.middleware");
 const { productRouter } = require("./routes/product.router");
 const cors = require("cors");
+const { tracker } = require("./middlewares/tracker.middleware");
 require("dotenv").config();
 
 const app = express();
-
 app.use(express.json());
 app.use(cors());
+
+app.use(tracker)
 
 app.use("/user", userRouter);
 
