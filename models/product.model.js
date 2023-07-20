@@ -19,3 +19,10 @@ const ProductModel=mongoose.model("product",productSchema)
 module.exports={
     ProductModel
 }
+
+
+// {
+//     "name":"LAMP",
+//     "title":"3D Night LED Lamp",
+//     "price":299
+//  }

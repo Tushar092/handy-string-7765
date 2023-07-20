@@ -1,8 +1,9 @@
 const express = require("express")
 const productRouter = express.Router()
-const { ProductModel } = require("../models/product.model")
+const { ProductModel } = require("../models/product.model");
 
-productRouter.get("/", async (req, res) => {
+
+productRouter.get("/",  async (req, res) => {
     try {
         const products = await ProductModel.find();
         res.status(200).send(products);
