@@ -1,7 +1,7 @@
 const express = require("express");
 const { connection } = require("./db");
 const { userRouter } = require("./routes/user.router");
-const { authenticate } = require("./middlewares/auth.middleware");
+const { auth } = require("./middlewares/auth.middleware");
 const { productRouter } = require("./routes/product.router");
 const cors = require("cors");
 require("dotenv").config();
@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/user", userRouter);
-app.use(authenticate);
+//app.use(auth);
 app.use("/product", productRouter)
 
 app.get("/", (req,res) => {
@@ -29,6 +29,6 @@ app.listen(process.env.PORT, async () => {
         console.log("Connecte to the DB");
         console.log(`Server is running on ${PORT}`);
     } catch (error) {
-        console.log(error.message);
+        console.log(error);
     }
 });
