@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+   <link rel="stylesheet" href="./../CSS/signup.css">
+</head>
+
+<body>
+    <div class="create">
+      <h1>Create an account here!</h1>
+      <form id="register-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+  
+        <label for="mobile">Mobile Number:</label>
+        <input type="number" id="mobile" name="mobile" required><br>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+  
+        <input type="checkbox" onclick="myFunction()">Show Password
+  
+        <button id="btn" type="submit">Register</button>
+
+        <p class="para-2">
+            Already have an account? <a href="./login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+  
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Registration Successful!</h2>
+        <p>Your account has been created.</p>
+        <p>Thank you for registering.</p>
+      </div>
+    </div>
+  
+    
+  </body>
+  
+</html>  
+
+<script src="./../Scripts/signup.js"></script>

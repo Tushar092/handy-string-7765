@@ -13,7 +13,7 @@ userRouter.post("/register",async(req,res)=>{
             const user= new UserModel({email,name,mobile,password:hash})
 
             await user.save()
-        res.status(200).send({"msg":"register successfully"})
+        res.status(200).send({"msg":`${user.name} has been registered successfully!!`})
         });
         // const user=await UserModel(req.body)
         
