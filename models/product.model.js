@@ -1,13 +1,13 @@
 const mongoose=require("mongoose")
 
 const productSchema=mongoose.Schema({
-        name:String,
+        // name:String,
         title:String,
         type: String,
         description: String,
         rating: Number,
         price:Number,
-        image:String
+        filename:String
       },
     {
         versionKey:false

@@ -44,17 +44,26 @@ html{
     font-weight: bold;
     color:purple;
 } */
+.icons{
+    width:35%;
+    /* border:1px solid black; */
+    display: flex;
+    justify-content: space-around;
+}
 .icons i{
     font-size: 3.2rem;
     color: purple;
     cursor: pointer;
     margin-right: 2rem;
+    padding-top: 5px;
+    /* border:1px solid yellow; */
 }
 .icons i:hover{
     color: var(--orange);
 }
 #search-bar{
-    width:60%;
+    /* border:1px solid red; */
+    width:78%;
     padding:1rem;
     margin-right: 20px;
     text-transform: none;
