@@ -26,26 +26,26 @@ html{
     scroll-behavior: smooth;
 }
 .prime-nav{
-    position: fixed;
+    /* position: fixed; */
     top:0;
     left: 0;
     right:0;
     background: whitesmoke;
-    z-index: 1000;
+    /* z-index: 1000; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem 9%;
 }
-/* .prime-nav .logo>img{
+.prime-nav .logo>img{
     width:100%;
     height:80px;
-} */
-.prime-nav .logo>h1{
+}
+/* .prime-nav .logo>h1{
     font-size: 35px;
     font-weight: bold;
     color:purple;
-}
+} */
 .icons i{
     font-size: 3.2rem;
     color: purple;
