@@ -26,20 +26,18 @@ html{
     scroll-behavior: smooth;
 }
 .prime-nav{
-    /* position: fixed; */
-    top:0;
+   top:0;
     left: 0;
     right:0;
-    background: whitesmoke;
-    /* z-index: 1000; */
+    background: Rgb(217,217,217);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 9%;
+    padding: 0.2rem 9%;
 }
 .prime-nav .logo>img{
-    width:100%;
-    height:80px;
+   width:100%;
+    height:85px;
 }
 /* .prime-nav .logo>h1{
     font-size: 35px;
@@ -58,7 +56,7 @@ html{
 #search-bar{
     width:60%;
     padding:1rem;
-    margin-right: 15px;
+    margin-right: 20px;
     text-transform: none;
     color:#333;
     font-size: 1.7rem;
@@ -72,18 +70,264 @@ html{
 a{
 text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.second-nav{
+    /* border:2px solid red; */
+    width:50%;
+    height:70px;
+    margin: auto;
+    margin-top: 15px;
+}
+.navbar{
+    /* border:2px solid black; */
+    height:40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navbar a{
+    color:purple;
+    font-size: 2.2rem;
+    margin:.8rem;
+    font-weight: bold;
+}
+.navbar a:hover{
+    color: var(--orange);
+}
+/* home */
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+.home .content{
+    margin-top: 30px;
+    text-align: center;
+}
+.home .content h3{
+    font-size: 4.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,.1);
+}
+.home .content p{
+    font-size: 2.5rem;
+    color: #fff;
+    padding: .5rem 0;
+}
+section{
+    padding: 2rem 9%;
+}
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    background: purple;
+    color: #fff;
+    padding:.8rem 3rem;
+    border:.2rem solid purple;
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.home .video-container video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 95%;
+    width: 100%;
+    object-fit: cover;
+}
+.home .controls{
+    padding: 1rem;
+    border-radius: 5rem;
+    background: rgba(0,0,0,.7);
+    position: relative;
+    top: 10rem;
+}
+.home .controls .vid-btn{
+    height: 2rem;
+    width: 2rem;
+    display: inline-block;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    margin: 0 .5rem;
+}
+.home .controls .vid-btn.active{
+    background: purple;
+}
+/* packages */
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+.heading span{
+    font-size: 3.5rem;
+    background: Rgb(217,217,217);
+    color: var(--orange);
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+}
+.heading span.space{
+    background: none;
+}
+.packages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 20px;
+    /* border:1px solid green; */
+}
+.packages .box-container .box{
+    /* border:1px solid red; */
+    flex: 1 1 30rem;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+.packages .box-container .box img{
+    height:30rem;
+    width:100%;
+    object-fit: fill;
+}
+.packages .box-container .box .content{
+    padding: 2rem;
+}
+.packages .box-container .box .content h3{
+    font-size: 2rem;
+    color: #333;
+}
+.packages .box-container .box .content h3 i{
+    color: var(--orange);
+    padding-right: 10px;
+}
+.packages .box-container .box .content p{
+    font-size: 1.7rem;
+    color: #666;
+    padding: 1rem 0;
+}
+.packages .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+.packages .box-container .box .content .price{
+    font-size: 2rem;
+    color: #333;
+    padding: 1rem;
+}
+.packages .box-container .box .content .price span{
+    color: #666;
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+.box-container>div>img:hover{
+    transform: scale(1.1);
+    z-index: 2;
+    } 
+    .view{
+        margin-top: 50px;
+        text-align: center;
+    }
+    .btn{
+        display: inline-block;
+        margin-top: 1rem;
+        background: purple;
+        color: #fff;
+        padding:.8rem 3rem;
+        border:.2rem solid purple;
+        cursor: pointer;
+        font-size: 1.7rem;
+        font-weight: 600;
+    }
+/* footer */
+.container{
+    max-width: 1170px;
+    margin:auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+ul{
+    list-style: none;
+}
+.footer{
+    margin-top: 30px;
+    background: Rgb(217,217,217);
+    padding: 70px 0;
+}
+.footer-col{
+    width:25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 20px;
+    color:purple;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: bold;
+    position: relative;
+}
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height:2px;
+    box-sizing: border-box;
+    width:50px;
+}
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    line-height: 2rem;
+    font-size: 15px;
+    color:purple;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: block;
+    transition:  all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+.footer-col .social-links a{
+    display: inline-block;
+    height:40px;
+    width:40px;
+    background-color: purple;
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
+}
+/* footer responsive */
+@media(max-width:767px){
+    .footer-col {
+        width:50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:574px){
+    .footer-col {
+        width:100%;
+        
+    }
+}
 
 
 
@@ -98,11 +342,11 @@ text-decoration: none;
 
 
   /* media queries for navbar */
-/* @media (max-width:1200px){
+ @media (max-width:1200px){
     html{
         font-size: 55%;
     }
-}
+} 
 @media (max-width:991px){
     .prime-nav{
         padding: 2rem;
@@ -143,4 +387,4 @@ text-decoration: none;
   .prime-nav span{
     font-size: 2.5rem;
   }
-} */
+} 
