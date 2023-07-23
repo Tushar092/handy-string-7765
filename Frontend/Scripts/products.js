@@ -187,7 +187,8 @@ function DisplayData(data) {
 
 function checkDuplicate(product) {
   for (let i = 0; i < Cart.length; i++) {
-    if (Cart[i].id == product.id) {
+    if (Cart[i]._id == product._id) {
+        console.log(Cart[i], product)
       return true;
     }
   }
@@ -237,11 +238,11 @@ backToTopButton.addEventListener('click', function() {
 
 
 // addTocart
-function addToCart(product) {
-  //   // Implement adding product to cart here
-    console.log(`Product "${product.name}" added to cart`);
-    alert("product added successfully")
-  }
+// function addToCart(product) {
+//   //   // Implement adding product to cart here
+//     console.log(`Product "${product.title}" added to cart`);
+//     alert("product added successfully")
+//   }
   
   function addToCart(product) {
   // Retrieve cart items from local storage
