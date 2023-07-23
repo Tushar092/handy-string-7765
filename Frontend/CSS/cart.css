@@ -1,0 +1,24 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+#cart_info{
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#brcm{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    border: 1px solid red;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table{
+    width: 90%;
+    margin: auto;
+}
