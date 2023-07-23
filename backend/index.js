@@ -1,7 +1,7 @@
 const express = require("express");
-const { connection } = require("./db");
-const { userRouter } = require("./routes/user.router");
-const { productRouter } = require("./routes/product.router");
+const { connection } = require("../db");
+const { userRouter } = require("../routes/user.router");
+const { productRouter } = require("../routes/product.router");
 const cors = require("cors");
 const passport = require("./Oauth");
 // const { tracker } = require("./middlewares/tracker.middleware");
