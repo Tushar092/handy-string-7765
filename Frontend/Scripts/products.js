@@ -1,87 +1,26 @@
-// const containerElement = document.querySelector('.productData');
-// const sortElement = document.querySelector('#sort');
-// const filterElement = document.querySelector('#filter');
-
-// function displayProducts() {
-//   fetch("http://localhost:4000/product/")
-//     .then(response => response.json())
-//     .then(data => {
-//       display(data)
-//     })
-//     .catch(error => {
-//       console.error(error);
-//     });
-// }
-// displayProducts()
-// function display(data) {
-//   containerElement.innerHTML = "";
-
-//   if (Array.isArray(data)) {
-//     data.forEach(product => {
-//       const productElement = document.createElement("div");
-//       productElement.classList.add("product");
-
-//       const filenameElement = document.createElement("img");
-//       filenameElement.classList.add("product-filename");
-//       filenameElement.src = product-filename;
-//       filenameElement.alt = product.title;
-//       productElement.appendChild(filenameElement);
-
-//       const titleElement = document.createElement("h2");
-//       titleElement.classList.add("product-title");
-//       titleElement.textContent = product.title;
-//       productElement.appendChild(titleElement);
-
-//       const descriptionElement = document.createElement("p");
-//       descriptionElement.classList.add("product-description");
-//       descriptionElement.textContent = `${product.description}`;
-//       productElement.appendChild(descriptionElement);
-
-//       const priceElement = document.createElement("h2");
-//       priceElement.classList.add("product-price");
-//       priceElement.textContent = `₹${product.price}`;
-//       productElement.appendChild(priceElement);
-
-//       const ratingElement = document.createElement("p");
-//       ratingElement.classList.add("product-rating");
-//       ratingElement.textContent = `₹${product.rating}`;
-//       productElement.appendChild(ratingElement);
-
-//       // Add "Add to Cart" button
-//       const buttonElement = document.createElement("button");
-//       buttonElement.textContent = "Add to Cart";
-//       buttonElement.addEventListener("click", () => {
-//         addToCart(product);
-//       });
-//       productElement.appendChild(buttonElement);
-
-//       containerElement.appendChild(productElement);
-//     });
-//   }
-
-// }
 
 
-// const sortSelect = document.getElementById('sort1');
 
-// sortSelect.addEventListener('change', async () => {
-//   const selectedSort = sortSelect.value;
+// const filterSelect = document.getElementById('filter');
 
-//   // fetch("http://localhost:8800/product/")
+// filterSelect.addEventListener('change', async () => {
+//   const selectedFilter = filterSelect.value;
+
+//   // fetch("http://localhost:4000/product/")
 //   //     .then(response => response.json())
 //   //     .then(data => {
-//   //         let sortedProducts = [];
+//   //         let filteredProducts = [];
 
-//   //         if (selectedSort === 'dec') {
-//   //             sortedProducts = data.sort((a, b) => b.price - a.price);
-//   //         } else if (selectedSort === 'asc') {
-//   //             sortedProducts = data.sort((a, b) => a.price - b.price);
+//   //         if (selectedFilter === 'dec') {
+//   //             filteredProducts = data.sort((a, b) => b.price - a.price);
+//   //         } else if (selectedFilter === 'asc') {
+//   //             filteredProducts = data.sort((a, b) => a.price - b.price);
 //   //         } else {
-//   //             sortedProducts = data;
+//   //             filteredProducts = data;
 //   //         }
 
 //   //         containerElement.innerHTML = '';
-//   //         sortedProducts.forEach(product => {
+//   //         filteredProducts.forEach(product => {
 //   //             // const productElement = createProductElement(product);
 //   //             containerElement.appendChild(productElement);
 //   //         });
@@ -90,7 +29,7 @@
 //     let res = await fetch("http://localhost:4000/product/");
 //     let result = await res.json();
 //     //    result=result.sort((a,b)=>{a.price-b.price})
-//     if (selectedSort === 'asc') {
+//     if (selectedFilter === 'asc') {
 //       let arr = result.sort((a, b) => {
 //         return a.price - b.price
 //       });
@@ -120,7 +59,7 @@
 // function addToCart(product) {
 // // Retrieve cart items from local storage
 // let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
+// let Cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 // // Add product to cart
 // product.quantity=1
@@ -129,6 +68,7 @@
 
 // // Store cart items in local storage
 // localStorage.setItem('cartItems', JSON.stringify(cartItems));
+// localStorage.setItem('cart', JSON.stringify(cart));
 
 // console.log(`Product "${product.title}" added to cart`);
 // alert("Product added to cart successfully");
@@ -181,21 +121,33 @@ async function FetchData() {
 }
 
 FetchData();
-let filterby = document.getElementById("filter");
-filterby.addEventListener("change", () => {
-  FetchData();
-});
-function FilterData(data) {
-  if (filterby.value === "") {
-    DisplayData(data);
-  } else {
-    data = data.filter((ele) => {
-      return ele.category == filterby.value;
-    });
-    DisplayData(data);
+
+let filterSelect = document.getElementById('filter');
+
+filterSelect.addEventListener('change', async () => {
+  let selectedFilter = filterSelect.value;
+
+  try {
+    let response = await fetch("http://localhost:4000/product/");
+    let data = await response.json();
+    let filteredProducts = [];
+
+    if (selectedFilter === 'dec') {
+      filteredProducts = data.sort((a, b) => b.price - a.price);
+    } else if (selectedFilter === 'asc') {
+      filteredProducts = data.sort((a, b) => a.price - b.price);
+    } else {
+      filteredProducts = data;
+    }
+
+    // Clear the container before appending the filtered products.
+    Container.innerHTML = '';
+    DisplayData(filteredProducts);
+  } catch (error) {
+    console.error("Error fetching data:", error);
   }
-  // console.log("data",data)
-}
+});
+
 let Cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let Container = document.getElementById("product-container");
@@ -241,3 +193,72 @@ function checkDuplicate(product) {
   }
   return false;
 }
+
+ // Get the back to top button
+const backToTopButton = document.getElementById('back');
+
+// Add the click event listener to the back to top button
+backToTopButton.addEventListener('click', function() {
+  // Scroll to the top of the page
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+
+// Filter
+// let filterSelect = document.getElementById('filter');
+
+// filterSelect.addEventListener('change', async () => {
+//   let selectedFilter = filterSelect.value;
+
+//   fetch("http://localhost:4000/product/")
+//       .then(response => response.json())
+//       .then(data => {
+//           let filteredProducts = [];
+
+//           if (selectedFilter === 'dec') {
+//               filteredProducts = data.sort((a, b) => b.price - a.price);
+//               DisplayData(filteredProducts)
+//           } else if (selectedFilter === 'asc') {
+//               filteredProducts = data.sort((a, b) => a.price - b.price);
+//               DisplayData(filteredProducts)
+//           } else {
+//                filteredProducts = data;
+//               DisplayData(filteredProducts)
+//           }
+
+//           Container.innerHTML = '';
+//           filteredProducts.forEach(product => {
+//               const productElement = document.createElement("product");
+//               Container.appendChild(productElement);
+//           });
+//   })
+// });
+
+
+
+// addTocart
+function addToCart(product) {
+  //   // Implement adding product to cart here
+    console.log(`Product "${product.name}" added to cart`);
+    alert("product added successfully")
+  }
+  
+  function addToCart(product) {
+  // Retrieve cart items from local storage
+  // let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  let Cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+  // Add product to cart
+  product.quantity=1
+  console.log(product)
+  Cart.push(product);
+  
+  // Store cart items in local storage
+  // localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  localStorage.setItem('cart', JSON.stringify(Cart));
+  
+  console.log(`Product "${product.title}" added to cart`);
+  alert("Product added to cart successfully");
+  }
+  
+  DisplayData();
