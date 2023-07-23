@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="../CSS/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css"
+        integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="shortcut icon" href="./../Images/fav2.png" type="image/png">
+
+</head>
+<body>
+    <!-- header section -->
+    <div class="prime-nav">
+        <div class="icons">
+            <i class="fas fa-search" id="search-btn"></i>
+            <input type="search" id="search-bar" placeholder="search here...">
+            <!-- <i class="fas fa-search" id="search-btn"></i> -->
+        </div>
+        <div class="logo">
+            <img src="../Images/shoptuck-logo.png" alt="error">
+            <!-- <h1>ShopTuck</h1> -->
+        </div>
+        <div class="small-nav-icon">
+            <a href="">
+                <img src="https://ii1.pepperfry.com/assets/w22-profile-icon.svg" alt="../Images/person-icon.png">
+            </a>
+        
+            <a href="#">
+                <img src="https://ii1.pepperfry.com/assets/w22-pf-notification-icon.svg" alt="../Images/bell-icon.png">
+            </a>
+        
+            <a href="#">
+                <img src="https://ii1.pepperfry.com/assets/w22-pf-wishlist-icon.svg" alt="../Images/heart-icon.png">
+            </a>
+        
+            <a href="#">
+                <img src="https://ii1.pepperfry.com/assets/w22-pf-cart-icon.svg" alt="../Images/cart icon.png">
+            </a>
+        </div>
+    </div>
+   <div class="second-nav">
+        <nav class="navbar">
+            <a href="./index.html">Home</a>
+             <a href="./products.html">Catalog</a>
+        <a href="../Pages/review.html">Review</a>
+        <a href="./contactUs.html">Contact</a>
+        <a href="../Pages/faq.html">More about us</a>
+        </nav>
+    </div>
+    <!-- header section -->
+    
+    <!-- products start-->
+    <div class="box"></div>
+
+    <div id="filter1">
+      <select name="filter" id="filter">
+        <option value="">Filter by: Recommended</option>
+        <option value="dec">Price: Low to High</option>
+        <option value="asc">Price: High to Low</option>
+     </select>
+      <br><br>
+
+      <div id="product-container">
+        <!-- Here Append All the Products  -->
+      </div>
+
+
+      <div id="back"> BACK TO TOP</div>
+      <!-- products end -->
+
+      <!-- footer start -->
+   <footer class="footer">
+    <div class="container">
+      <div class="row">
+          <div class="footer-col">
+              <h4>Company</h4>
+              <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Our Services</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Affiliate Program</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Get Help</h4>
+              <ul>
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Shipping</a></li>
+                  <li><a href="#">Returns</a></li>
+                  <li><a href="#">Order Status</a></li>
+                  <li><a href="#">Payment Options</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Online Shop</h4>
+              <ul>
+                  <li><a href="#">Kitchen Equipments</a></li>
+                  <li><a href="#">Lights</a></li>
+                  <li><a href="#">Bag</a></li>
+                  <li><a href="#">Jewellery</a></li>
+              </ul>
+          </div>
+          <div class="footer-col">
+              <h4>Follow Us</h4>
+              <div class="social-links">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+    </div>
+ </footer>
+
+<!-- footer end -->
+</body>
+</html>
+<script src="../Scripts/products.js"></script>
