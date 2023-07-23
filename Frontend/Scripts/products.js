@@ -237,12 +237,13 @@ backToTopButton.addEventListener('click', function() {
 
 
 
-// addTocart
-// function addToCart(product) {
-//   //   // Implement adding product to cart here
-//     console.log(`Product "${product.title}" added to cart`);
-//     alert("product added successfully")
-//   }
+
+function addToCart(product) {
+  //   // Implement adding product to cart here
+    console.log(`Product "${product.title}" added to cart`);
+    alert("product added successfully")
+  }
+
   
   function addToCart(product) {
   // Retrieve cart items from local storage
