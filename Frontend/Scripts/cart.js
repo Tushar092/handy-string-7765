@@ -50,7 +50,6 @@ const getRows = (item) => {
       if (item.quantity > 1) {
         item.quantity--;
         localStorage.setItem("cart", JSON.stringify(Cart));
-        // displayCartItems(Cart);
         totalPrices(item)
       }
     });
