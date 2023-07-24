@@ -204,38 +204,6 @@ backToTopButton.addEventListener('click', function() {
 });
 
 
-// Filter
-// let filterSelect = document.getElementById('filter');
-
-// filterSelect.addEventListener('change', async () => {
-//   let selectedFilter = filterSelect.value;
-
-//   fetch("http://localhost:4000/product/")
-//       .then(response => response.json())
-//       .then(data => {
-//           let filteredProducts = [];
-
-//           if (selectedFilter === 'dec') {
-//               filteredProducts = data.sort((a, b) => b.price - a.price);
-//               DisplayData(filteredProducts)
-//           } else if (selectedFilter === 'asc') {
-//               filteredProducts = data.sort((a, b) => a.price - b.price);
-//               DisplayData(filteredProducts)
-//           } else {
-//                filteredProducts = data;
-//               DisplayData(filteredProducts)
-//           }
-
-//           Container.innerHTML = '';
-//           filteredProducts.forEach(product => {
-//               const productElement = document.createElement("product");
-//               Container.appendChild(productElement);
-//           });
-//   })
-// });
-
-
-
 // addTocart
 function addToCart(product) {
   //   // Implement adding product to cart here
