@@ -1,6 +1,6 @@
 let tbody = document.getElementById("tablebody");
 let imageURL = "../Images/bell-icon.png";
-let Cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 let totalPrice = 0;
 let baseURL = `http://localhost:4000/product`;
 
@@ -23,7 +23,7 @@ const getTable = (pro) => {
     });
 }
 
-getTable(Cart);
+getTable(cartItems);
 
 const getRows = (item) => {
     let pr = document.createElement("tr");
@@ -49,8 +49,8 @@ const getRows = (item) => {
     decreaseQuantityButton.addEventListener("click", () => {
       if (item.quantity > 1) {
         item.quantity--;
-        localStorage.setItem("cart", JSON.stringify(Cart));
-        // displayCartItems(Cart);
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+        displayCartItems(cartItems);
         totalPrices(item)
       }
     });
@@ -65,8 +65,8 @@ const getRows = (item) => {
     increaseQuantityButton.textContent = "+";
     increaseQuantityButton.addEventListener("click", () => {
       item.quantity++;
-      localStorage.setItem("cart", JSON.stringify(Cart));
-      // displayCartItems(cart);
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      displayCartItems(cartItems);
       totalPrices(item)
     });
     quantityContainer.appendChild(increaseQuantityButton, quantityElement, decreaseQuantityButton);
