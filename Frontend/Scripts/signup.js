@@ -21,7 +21,7 @@ function myFunction() {
       // console.log(payload);
 
       try {
-        const response = await fetch("https://gold-elated-turtle.cyclic.app/users/register", {
+        const response = await fetch("http:localhost:4500/register", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
