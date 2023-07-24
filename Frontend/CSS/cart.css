@@ -13,7 +13,6 @@ body {
     width: 100%;
     margin: auto;
     display: flex;
-    border: 1px solid red;
     justify-content: space-between;
     align-items: center;
 }

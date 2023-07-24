@@ -6,6 +6,12 @@ const cors = require("cors");
 const passport = require("./Oauth");
 // const { tracker } = require("./middlewares/tracker.middleware");
 require("dotenv").config();
+const session = require('express-session');
+const MongoDBStore = require('connect-mongodb-session')(session);
+const store = new MongoDBStore({
+    uri: 'mongodb://localhost:27017/db',
+    collection: 'sessions'
+});
 
 PORT = process.env.PORT || 4500;
 
